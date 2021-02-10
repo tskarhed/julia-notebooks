@@ -9,6 +9,10 @@ begin
 	using Plots
 	# Use Plotly plotting backend
 	plotlyjs()
+end
+
+# ╔═╡ 5a5fb850-6b8f-11eb-2d2c-8dcedf10efd9
+begin
 	# Define variables
 	a = 1
 	b = 2
@@ -42,6 +46,7 @@ plot(r, Y, label="|E|", xlabel="Radius (r)", ylabel="Field strength |E|")
 
 # ╔═╡ Cell order:
 # ╠═53c7d9b0-6b89-11eb-398b-675411f493dc
+# ╠═5a5fb850-6b8f-11eb-2d2c-8dcedf10efd9
 # ╟─951df740-6b8a-11eb-2caa-b5a1291edc31
 # ╠═660d2082-6b89-11eb-100d-8b577e9ae037
 # ╠═6a2b5b50-6b89-11eb-38e5-33a649d074ae
