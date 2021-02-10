@@ -4,6 +4,15 @@
 using Markdown
 using InteractiveUtils
 
+# This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
+macro bind(def, element)
+    quote
+        local el = $(esc(element))
+        global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : missing
+        el
+    end
+end
+
 # ╔═╡ 53c7d9b0-6b89-11eb-398b-675411f493dc
 begin
 	using Plots
@@ -22,16 +31,20 @@ $\oint_S \overline{E} \cdot d\overline{s} = \frac{Q_{in}}{\epsilon}$
 # ╔═╡ 951df740-6b8a-11eb-2caa-b5a1291edc31
 md"""
 ## E-field in spherical geometry
-This claculation describes the strength of an electric firld with chrage density $\rho_v$. It is of a spehrical form, with vaccum on the inside (radius less than a) and the outside (radius bigger than b).
+This claculation describes the strength of an electric field with chrage density $\rho_v$. It is of a spehrical form, with vaccum on the inside (radius less than a) and the outside (radius bigger than b).
 """
 
 # ╔═╡ 5a5fb850-6b8f-11eb-2d2c-8dcedf10efd9
-begin
-	# Define variables
-	a = 1
-	b = 2
-	ρ = 5*10^(-3)
-end
+ρ = 5*10^(-3)
+
+# ╔═╡ 1ed77c60-6bc5-11eb-1a68-e9e8d51f7d87
+@bind a html"<input type='range' max='1' step='' min='0'>"
+
+# ╔═╡ 8fc3f460-6bc7-11eb-26b8-61d35bfa4fef
+@bind b html"<input type='range' step='0.1' max='3' min='2' label='$(b)'>"
+
+# ╔═╡ f0717252-6bc8-11eb-3bfd-d5d0d0fd299c
+(a,b)
 
 # ╔═╡ 660d2082-6b89-11eb-100d-8b577e9ae037
 function E(r)
@@ -45,7 +58,7 @@ function E(r)
 end
 
 # ╔═╡ 6a2b5b50-6b89-11eb-38e5-33a649d074ae
-r = 0:0.001:8
+r = 0:0.001:10
 
 # ╔═╡ 7418b540-6b89-11eb-1f53-89165d55d825
 Y = E.(r)
@@ -129,6 +142,9 @@ plot(r_vec, y, xlabel="Radius(r)", ylabel="Volatge(V)", ylim=(0, V_0+1), label="
 # ╠═15c25e30-6bbe-11eb-2e55-cfe5abc44d2b
 # ╟─951df740-6b8a-11eb-2caa-b5a1291edc31
 # ╠═5a5fb850-6b8f-11eb-2d2c-8dcedf10efd9
+# ╟─1ed77c60-6bc5-11eb-1a68-e9e8d51f7d87
+# ╟─8fc3f460-6bc7-11eb-26b8-61d35bfa4fef
+# ╠═f0717252-6bc8-11eb-3bfd-d5d0d0fd299c
 # ╠═660d2082-6b89-11eb-100d-8b577e9ae037
 # ╠═6a2b5b50-6b89-11eb-38e5-33a649d074ae
 # ╠═7418b540-6b89-11eb-1f53-89165d55d825
