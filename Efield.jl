@@ -32,13 +32,13 @@ function E(r)
 end
 
 # ╔═╡ 6a2b5b50-6b89-11eb-38e5-33a649d074ae
-r = 0:0.001:5
+r = 0:0.001:8
 
 # ╔═╡ 7418b540-6b89-11eb-1f53-89165d55d825
 Y = E.(r)
 
 # ╔═╡ 78ff2210-6b89-11eb-29df-c5714c003c7d
-plot(r, Y)
+plot(r, Y, label="|E|", xlabel="Radius (r)", ylabel="Field strength |E|")
 
 # ╔═╡ Cell order:
 # ╠═53c7d9b0-6b89-11eb-398b-675411f493dc
