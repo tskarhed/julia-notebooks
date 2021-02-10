@@ -132,10 +132,10 @@ plot(r_vec, y, xlabel="Radius(r)", ylabel="Volatge(V)", ylim=(0, V_0+1), label="
 # ╠═660d2082-6b89-11eb-100d-8b577e9ae037
 # ╠═6a2b5b50-6b89-11eb-38e5-33a649d074ae
 # ╠═7418b540-6b89-11eb-1f53-89165d55d825
-# ╠═78ff2210-6b89-11eb-29df-c5714c003c7d
-# ╠═6d19078e-6b98-11eb-265b-c913b44ff56a
+# ╟─78ff2210-6b89-11eb-29df-c5714c003c7d
+# ╟─6d19078e-6b98-11eb-265b-c913b44ff56a
 # ╠═eaee7830-6b98-11eb-0a38-3b3060407cc1
 # ╠═0de35890-6bc3-11eb-2e29-0f5ebe681620
 # ╠═4e92a440-6bc3-11eb-108c-e1cb845eb432
 # ╠═7cf30c32-6bc3-11eb-1e1d-6d3a80c175f6
-# ╠═995855b0-6bc3-11eb-013d-29ec57548faf
+# ╟─995855b0-6bc3-11eb-013d-29ec57548faf
