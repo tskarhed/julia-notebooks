@@ -34,14 +34,17 @@ md"""
 This claculation describes the strength of an electric field with chrage density $\rho_v$. It is of a spehrical form, with vaccum on the inside (radius less than a) and the outside (radius bigger than b).
 """
 
+# ╔═╡ f87b9c1e-6d6f-11eb-0805-0923965aba3b
+ϵ = 8.8541878128e-12
+
 # ╔═╡ 5a5fb850-6b8f-11eb-2d2c-8dcedf10efd9
 ρ = 5*10^(-3)
 
 # ╔═╡ 1ed77c60-6bc5-11eb-1a68-e9e8d51f7d87
-@bind a html"<input type='range' max='1' step='' min='0'>"
+@bind a html"<input value='1' type='range' max='1' step='' min='0'>"
 
 # ╔═╡ 8fc3f460-6bc7-11eb-26b8-61d35bfa4fef
-@bind b html"<input type='range' step='0.1' max='3' min='2' label='$(b)'>"
+@bind b html"<input value='2' type='range' step='0.1' max='3' min='2' label='$(b)'>"
 
 # ╔═╡ f0717252-6bc8-11eb-3bfd-d5d0d0fd299c
 (a,b)
@@ -51,9 +54,9 @@ function E(r)
 	if(r<=a)
 		return 0
 	elseif(a<r<b)
-		return ρ*(r^3-a^3)/(3*r^2)
+		return ρ*(r^3-a^3)/(ϵ*(3*r^2))
 	else
-		return ρ*(b^3-a^3)/(3*r^2)
+		return ρ*(b^3-a^3)/(ϵ*(3*r^2))
 	end
 end
 
@@ -64,7 +67,7 @@ r = 0:0.001:10
 Y = E.(r)
 
 # ╔═╡ 78ff2210-6b89-11eb-29df-c5714c003c7d
-plot(r, Y, label="|E|", xlabel="Radius in cm (r)", ylabel="Field strength |E|")
+plot(r, Y, label="|E|", xlabel="Radius in m (r)", ylabel="Field strength |E|")
 
 # ╔═╡ 6d19078e-6b98-11eb-265b-c913b44ff56a
 md"""
@@ -141,6 +144,7 @@ plot(r_vec, y, xlabel="Radius(r)", ylabel="Volatge(V)", ylim=(0, V_0+1), label="
 # ╠═53c7d9b0-6b89-11eb-398b-675411f493dc
 # ╠═15c25e30-6bbe-11eb-2e55-cfe5abc44d2b
 # ╟─951df740-6b8a-11eb-2caa-b5a1291edc31
+# ╠═f87b9c1e-6d6f-11eb-0805-0923965aba3b
 # ╠═5a5fb850-6b8f-11eb-2d2c-8dcedf10efd9
 # ╟─1ed77c60-6bc5-11eb-1a68-e9e8d51f7d87
 # ╟─8fc3f460-6bc7-11eb-26b8-61d35bfa4fef
