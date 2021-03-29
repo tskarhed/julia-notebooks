@@ -26,13 +26,13 @@ b = 30;
 L = 50;
 
 # ╔═╡ de4fdbf2-906e-11eb-2715-6f5bc8d68d2a
-a = 1:b;
+a = 1:b/2;
 
 # ╔═╡ 662d3360-906f-11eb-2826-d18803f2c32e
 R = (b^2*(L^2 .+ a.^2))/(σ*L*(b^2 .- a.^2))
 
 # ╔═╡ 3c5e1dee-9070-11eb-1369-6509d6df4f3c
-plot(a, R[:,1], xlabel="a [m]", ylabel="Resistance [Ohms]")
+plot(a, R[:,1], xlabel="a [m]", ylabel="Resistance [Ohms]", label="R")
 
 # ╔═╡ Cell order:
 # ╠═1b7aa6b0-906d-11eb-1bcd-9fd48415fade
