@@ -29,7 +29,7 @@ b = 30;
 L = 50;
 
 # ╔═╡ 94eb35b0-9161-11eb-1c77-5d337997146a
-simulationData = CSV.File("./data/resistance.csv")
+simulationData = CSV.File("./data/resistance2.csv")
 
 # ╔═╡ de4fdbf2-906e-11eb-2715-6f5bc8d68d2a
 a = simulationData.a; #Use same values of a as in the simulation
